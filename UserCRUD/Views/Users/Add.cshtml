@@ -1,0 +1,40 @@
+﻿@model UserCRUD.Models.Utility.AddUserViewModel
+
+@{
+}
+<div class="mt-4 px-5 d-flex justify-content-center">
+    <div class="bg-white shadow-lg rounded w-50 p-4">
+        <div class="text-center">
+            <h2 class="mb-3 display-6">Add User</h2>
+            <hr />
+        </div>
+        <form method="post" action="Add">
+            <div class="mb-3 form-outline">
+                <label for="Username"><strong>Username</strong></label>
+                <input type="text" class="form-control border-dark" asp-for="Username" />
+            </div>
+
+            <div class="mb-3 form-outline">
+                <label for="Email"><strong>Email</strong></label>
+                <input type="email" class="form-control border-dark" asp-for="Email" />
+            </div>
+
+            <div class="mb-3 form-outline">
+                <label><strong>Select Role</strong></label>
+                <select class="form-select border-dark" aria-label="Default select example" asp-for="Role">
+                    <option value="Viewer">Viewer</option>
+                    <option value="Moderator">Moderator</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+
+            <div class="mb-4 form-outline">
+                <label for="BirthDate"><strong>Birth Date</strong></label>
+                <input type="date" class="form-control border-dark" asp-for="BirthDate" />
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

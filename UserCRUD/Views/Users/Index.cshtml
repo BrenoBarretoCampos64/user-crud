@@ -1,0 +1,46 @@
+﻿@model List<UserCRUD.Models.Domain.User>
+
+@{
+}
+<div class="mt-4 p-3 shadow-lg rounded bg-white">
+	<div class="d-flex justify-content-center">
+		<h2 class="display-6">Registered Users</h2>
+	</div>
+	<hr />
+	@if (Model.Any())
+	{
+		<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Username</th>
+				<th>Email</th>
+				<th>Role</th>
+				<th>Birth Date</th>
+				<th>Edit User</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var user in Model)
+			{
+				<tr>
+					<td>@user.Id</td>
+					<td>@user.Username</td>
+					<td>@user.Email</td>
+					<td>@user.Role</td>
+					<td>@user.BirthDate</td>
+					<td><a class="btn btn-warning" href="Users/Edit/@user.Id">Edit</a></td>
+				</tr>
+			}
+		</tbody>
+		</table>
+	}
+	else
+	{
+		<div class="d-flex justify-content-center">
+			<div>
+				<p><strong>There are no users registered yet</strong></p>
+			</div>
+		</div>
+	}
+</div>
